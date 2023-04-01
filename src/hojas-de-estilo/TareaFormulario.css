@@ -8,11 +8,16 @@
 .tarea-input {
   width: 350px;
   font-size: 18px;
-  background-color: rgb(184, 209, 74);
+  background-color: rgb(255, 255, 255);
   padding: 14px 32px 14px 16px;
   border-radius: 4px 0 0 4px;
   border: 2px solid #00471b;
   outline: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.tarea-input:hover {
+  transform: scale(1.1);
 }
 
 .tarea-boton {
@@ -26,4 +31,9 @@
   background: #00471b;
   color: #fff;
   text-transform: capitalize;
+  transition: transform 0.2s ease-in-out;
+}
+
+.tarea-boton:hover {
+  transform: scale(1.1);
 }
