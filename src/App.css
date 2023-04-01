@@ -6,20 +6,36 @@
 
 html,
 body {
-  color: white;
-  background-color: #1b1b32;
+  color: #2347b3;
+  background-color: #000000;
   font-family: lato, sans-serif;
   margin-top: 20px;
 }
 
 h1 {
-  color: #1b1b32;
-  font-size: 25px;
+  color: #fff;
+  font-size: 55px;
   font-family: roboto, sans-serif;
   text-align: center;
+  animation: rotate 2s infinite;
   margin: 20px 0;
-
+  padding: 10px;
+  border-radius: 26px;
+  animation: move 5s ease-in-out infinite;
 }
+
+@keyframes move {
+  0% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
 
 .aplicacion-tareas {
   display: flex; 
@@ -28,25 +44,44 @@ h1 {
   align-items: center;
 }
 
-.torben-logo-contenedor {
-  width: 100%;
-  margin: flex;  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.torben-logo {
-  width: 400px;
-  height: 200px;
-}
-
 .tareas-lista-principal {
   width: 600px;
   min-height: 500px;
-  background-color: #d0d0d5;
+  background-color: #1a753d;
   padding: 25px;
   margin: 40px;
   justify-content: center;
-  border-radius: 26px;    
+  border-radius: 26px;
+  transition: all 0.3s ease-in-out;
+  transform-origin: center;
+  position: relative;
+}
+
+.tareas-lista-principal::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
+  z-index: -1;
+  border-radius: inherit;
+  background-color: #46b6be;
+  transform: scale(1.05);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.tareas-lista-principal:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tareas-lista-principal:hover::before {
+  transform: scale(1);
+  opacity: 0.3;
+}
+
+.tarea-input {
+  background-color: #749a83;
 }
